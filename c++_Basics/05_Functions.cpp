@@ -55,7 +55,29 @@ int digitSum(int num)
 }
 */
 
-// main starting function;
+// check prime num
+bool isPrime(int num)
+{
+	if (num <= 1)
+	{
+		cout << num << " is not a prime number." << endl;
+		return false; // 0 and 1 are not prime numbers
+	}
+
+	for (int i = 2; i * i <= num; i++)
+	{
+		if (num % i == 0)
+		{
+			cout << num << " is not a prime number." << endl;
+			return false; // If divisible, not a prime
+		}
+	}
+
+	cout << num << " is a prime number." << endl;
+	return 0; // Prime number
+};
+
+// main  function;
 int main()
 {
 	cout << "Learn the Funtions \n";
@@ -66,7 +88,9 @@ int main()
 	// cout << "Factorial of N numbers is = " << nFact(3) << endl;
 	// cout << digitSum(145) << endl;
 
-	// return 0;
+	cout << isPrime(55) << endl;
+
+	return 0;
 };
 
 // Home work ;
