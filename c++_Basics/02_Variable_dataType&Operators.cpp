@@ -81,10 +81,10 @@ int main()
 	// UNARY OPERATORS: jo ek operand ke saath perform hote hai. : ++, --;
 	// Increment and Decrement Operators: ++, --;
 	int x = 10;
-	cout << "Increment= " << ++x << endl; // 11; pehle increment fir print;
-	cout << "Decrement= " << --x << endl; // 10; pehle decrement fir print;
-	cout << "Increment= " << x++ << endl; // 10; pehle print fir increment;
-	cout << "Decrement= " << x-- << endl; // 11; pehle print fir decrement;
+	cout << "PreIncrement= " << ++x << endl; // 11; pehle increment fir print;
+	cout << "PreDecrement= " << --x << endl; // 10; pehle decrement fir print;
+	cout << "PostIncrement= " << x++ << endl; // 10; pehle print fir increment;
+	cout << "PostDecrement= " << x-- << endl; // 11; pehle print fir decrement;
 	cout << "------------------------" << endl;
 
 	// return 0;
