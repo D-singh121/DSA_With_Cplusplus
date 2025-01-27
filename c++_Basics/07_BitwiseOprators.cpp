@@ -54,62 +54,118 @@
 // 5. Function Scope
 // 6. Block Scope
 
-
 // Data type modifiers: Data type modifiers are used with data types to modify the amount of memory allocated to a variable.
 // 1. signed
 // 2. unsigned
 // 3. long 		// long int
 // 4. short
 // 5. long long
-// 6. long double 
+// 6. long double
 // etc....
 
+// Qestion :
+// 1. How to find if a number is power of 2 without using loops?
+// solution:  lets  n = 8; and 8 = 1000 in binary
+// n << x == n * 2^x
+// 8 << 1 == 8 * 2^1
+// in binary of 8 is: 1000 << 1 == 8 * 2
+// 10000 == 16
+// so  10000 in binary is eqaul to 16 in decimal so 8 is power of 2
+// hence n << x == n * 2^x
 
+/*
+// Function to check if a number is a power of 2;
+// solution:
+bool isPowerOfTwo(int n)
+{
+	if (n <= 0)
+		return false; // Negative numbers and zero are not powers of 2
+	return (n & (n - 1)) == 0;
+};
+*/
+
+// write a program to reverse a number  like 1234 into 4321;
+// Solution:
+int reverseNumber(int num)
+{
+	int reverse = 0, remender = 0;
+	while (num > 0)
+	{
+		remender = num % 10; // on first iteration remender = 1234%10 = 4 and so on 3,2,1 for next iterations
+		reverse = reverse * 10 + remender; // on first iteration reverse = 0*10+4 = 4 and so on 43,432,4321 for next iterations
+		num /= 10; // num = num/10; on first iteration num = 1234/10 = 123 and so on 12,1,0 for next iterations
+	};
+	return reverse; // result number here 4321
+};
+
+// ----------------------------------------------------------// Starting of the main function //----------------------------------------------------------
+// int a = 100; // Global Scope
 #include <iostream>
 using namespace std;
 
-int a = 100; // Global Scope
-
 int main()
 {
-	int a = 6, b = 10;
-	cout << "AND operator = " << (a & b) << endl;
-	cout << "------------------------" << endl;
-	cout << "OR operator = " << (a | b) << endl;
-	cout << "------------------------" << endl;
-	cout << "XOR operator = " << (a ^ b) << endl;
+	// int a = 6, b = 10;
+	// cout << "AND operator = " << (a & b) << endl;
+	// cout << "------------------------" << endl;
+	// cout << "OR operator = " << (a | b) << endl;
+	// cout << "------------------------" << endl;
+	// cout << "XOR operator = " << (a ^ b) << endl;
 
-	cout << "------------------------" << endl;
-	cout << "Left shift =  " << (a << 1) << endl;
-	cout << "Right shift =  " << (a >> 1) << endl;
+	// cout << "------------------------" << endl;
+	// cout << "Left shift =  " << (a << 1) << endl;
+	// cout << "Right shift =  " << (a >> 1) << endl;
 
-	cout << "----------Precendence--Associative--------------" << endl;
-	cout << "5+2-3= " << 5 + 2 - 3 << endl;	  // 4
-	cout << "5*2/3= " << 5 * 2 / 3 << endl;	  // 3
-	cout << "5+2/3= " << (5 + 2) / 3 << endl; // 3
-	cout << "5+2/3= " << 5 + 2 / 3 << endl;	  // 5
+	// cout << "----------Precendence--Associative--------------" << endl;
+	// cout << "5+2-3= " << 5 + 2 - 3 << endl;	  // 4
+	// cout << "5*2/3= " << 5 * 2 / 3 << endl;	  // 3
+	// cout << "5+2/3= " << (5 + 2) / 3 << endl; // 3
+	// cout << "5+2/3= " << 5 + 2 / 3 << endl;	  // 5
 
-	cout << "----------Scope--------------" << endl;
-	cout << "Global scope variable = " << a << endl;		 // 6 from main function
-	cout << "outer Global scope variable = " << ::a << endl; // 100 from global scope
+	// cout << "----------Scope--------------" << endl;
+	// cout << "Global scope variable = " << a << endl;		 // 6 from main function
+	// cout << "outer Global scope variable = " << ::a << endl; // 100 from global scope
 
-	int y = 10; // Global Scope inside main function
+	// int y = 10; // Global Scope inside main function
+	// {
+	// 	int x = 20;										// Block Scope
+	// 	cout << "block scope variable = " << x << endl; // 20
+	// 	cout << "Global scope variabl = " << y << endl; // 10
+	// }
+
+	// cout << "---------Modifyers---------" << endl;
+	// cout << "Size of int = " << sizeof(int) << endl;					 // 4 bytes == 32 bits
+	// cout << "Size of short int = " << sizeof(short int) << endl;		 // 2 bytes == 16 bits
+	// cout << "Size of long int = " << sizeof(long int) << endl;			 // 8 bytes == 64 bits
+	// cout << "Size of long long int = " << sizeof(long long int) << endl; // 8 bytes	== 64 bits
+	// cout << "Size of float = " << sizeof(float) << endl;				 // 4 bytes == 32 bits
+	// cout << "Size of double = " << sizeof(double) << endl;				 // 8 bytes == 64 bits
+	// cout << "Size of long double = " << sizeof(long double) << endl;	 // 16 bytes == 128 bits
+
+	// cout << "signed int = " << sizeof(signed int) << endl;	   // from -2^31 to 2^31-1
+	// cout << "unsigned int = " << sizeof(unsigned int) << endl; // from 0 to 2^32-1 always positive
+
+	/*
+	// Check if a number is a power of 2
+	int num;
+	cout << "Enter a number: ";
+	cin >> num;
+
+	if (isPowerOfTwo(num))
 	{
-		int x = 20;										// Block Scope
-		cout << "block scope variable = " << x << endl; // 20
-		cout << "Global scope variabl = " << y << endl;	// 10
+		cout << num << " is a power of 2." << endl;
 	}
+	else
+	{
+		cout << num << " is not a power of 2." << endl;
+	}
+	*/
 
-	cout << "---------Modifyers---------" << endl;
-	cout << "Size of int = " << sizeof(int) << endl; // 4 bytes == 32 bits
-	cout << "Size of short int = " << sizeof(short int) << endl; // 2 bytes == 16 bits
-	cout << "Size of long int = " << sizeof(long int) << endl; // 8 bytes == 64 bits
-	cout << "Size of long long int = " << sizeof(long long int) << endl; // 8 bytes	== 64 bits
-	cout << "Size of float = " << sizeof(float) << endl; // 4 bytes == 32 bits
-	cout << "Size of double = " << sizeof(double) << endl; // 8 bytes == 64 bits
-	cout << "Size of long double = " << sizeof(long double) << endl; // 16 bytes == 128 bits	
+	// Reverse a number
+	int num;
+	cout << "Enter a number: ";
+	cin >> num;
+	cout << "Reverse of " << num << " is " << reverseNumber(num) << endl; // function call
 
-	cout << "signed int = " << sizeof(signed int) << endl; // from -2^31 to 2^31-1
-	cout << "unsigned int = " << sizeof(unsigned int) << endl; // from 0 to 2^32-1 always positive
 	return 0;
-}
+};
