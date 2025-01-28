@@ -84,6 +84,7 @@ bool isPowerOfTwo(int n)
 };
 */
 
+/*
 // write a program to reverse a number  like 1234 into 4321;
 // Solution:
 int reverseNumber(int num)
@@ -97,6 +98,7 @@ int reverseNumber(int num)
 	};
 	return reverse; // result number here 4321
 };
+*/
 
 // ----------------------------------------------------------// Starting of the main function //----------------------------------------------------------
 // int a = 100; // Global Scope
@@ -153,19 +155,21 @@ int main()
 
 	if (isPowerOfTwo(num))
 	{
-		cout << num << " is a power of 2." << endl;
+		cout << num << " is a power of 2." << endl;  // for true
 	}
 	else
 	{
-		cout << num << " is not a power of 2." << endl;
+		cout << num << " is not a power of 2." << endl; // for false
 	}
 	*/
 
+	/*
 	// Reverse a number
 	int num;
 	cout << "Enter a number: ";
 	cin >> num;
 	cout << "Reverse of " << num << " is " << reverseNumber(num) << endl; // function call
+	*/
 
 	return 0;
 };
