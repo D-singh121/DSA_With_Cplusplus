@@ -3,6 +3,45 @@
 #include <limits.h> // Include this header for INT_MAX and INT_MIN
 using namespace std;
 
+/*
+	// function to check pass by ref;
+	void passByRefDemo(int arr[], int size)
+	{
+		for (int i = 0; i < size; i++)
+		{
+			arr[i] *= 2;
+		}
+	};
+*/
+
+/*
+	// Function to find a number in an array
+	bool findNumberInArray(int arr[], int sz, int num)
+	{
+		for (int i = 0; i < sz; i++)
+		{
+			if (arr[i] == num)
+			{
+				return true; // found then true
+			}
+		}
+		return false; // if not found then false
+};
+*/
+
+// Reversing the array;
+void reverseTheArray(int arr[], int size)
+{
+	int start = 0, end = size - 1;
+	while (start < end)
+	{
+		swap(arr[start], arr[end]); // here "swap" is a builtIn function from <algorithm> std header;
+		start++;
+		end--;
+	}
+};
+
+// -------------------------------------////------------------------------------------////////-----------------------
 int main()
 {
 	cout << "Today we are going to learn the array Data Structure !" << endl;
@@ -65,7 +104,61 @@ int main()
 		cout << "Largest element is: " << largest << endl;
 	*/
 
-	// Pass by refrence : isme jab hum kisi array ko kisi another function se modify karte hai to original array bhi change ho jata hai because us function me array ki new copy na bankar original array ka adderss hi pass hota hai. aur ye pass by refrence hota hai . basically arrays ek pointers ki tarah kaam karte hai jo poore array ki starting adderess and size ko point karte hai memory me;
+	/*
+		// Pass by refrence : isme jab hum kisi array ko kisi another function se modify karte hai to original array bhi change ho jata hai because us function me array ki new copy na bankar original array ka adderss hi pass hota hai. aur ye pass by refrence hota hai . basically arrays ek pointers ki tarah kaam karte hai jo poore array ki starting adderess and size ko point karte hai memory me;
+
+		int passRef[] = {2, 4, 5, 6, 7, 8};
+		int sz = 6;
+
+		// before modifying
+		cout << "Before array modifying  " << endl;
+		for (int i = 0; i < sz; i++)
+		{
+			cout << passRef[i] << " ";
+		}
+		cout << endl;
+
+		passByRefDemo(passRef, sz); // calling func
+
+		// after modifying the original array ;
+		cout << "After array modifying  " << endl;
+		for (int i = 0; i < sz; i++)
+		{
+			cout << passRef[i] << " ";
+		}
+		cout << endl;
+	*/
+
+	/*
+		// Linear searching in array
+		// Question 1 : Find a specific element or numbar  on given array ;
+		int arr[] = {2, 4, 5, 6, 7, 8, 3, 10};
+		int sz = 8;
+		int num = 10; // number to be found on array ;
+
+		// Check if the number is in the array
+		findNumberInArray(arr, sz, num) ? cout << num << " is present in the array." << endl : cout << num << " is not present in the array." << endl;
+	*/
+
+	// Two Pointer problem:
+	// Reverse the original array
+	int arr[] = {1, 2, 3, 4, 5, 6};
+	int size = 6;
+	// before reversing
+	for (int i = 0; i < size; i++)
+	{
+		cout << arr[i];
+	};
+	cout << endl;
+
+	reverseTheArray(arr, size);
+
+	// After reversing
+	for (int i = 0; i < size; i++)
+	{
+		cout << arr[i] << " ";
+	};
+	cout << endl;
 
 	return 0;
 };
