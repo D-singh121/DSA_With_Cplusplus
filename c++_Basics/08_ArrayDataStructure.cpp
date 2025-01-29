@@ -94,6 +94,8 @@ int main()
 			// if (arr[i] < smallest)
 			// {
 			// 	smallest = arr[i];
+			// } else if(arr[i] > largest){
+			// 	largest = arr[i]
 			// };
 			// ---- OR--------
 			// ye if condition ko na use karke hum builtin "min()" and "max()" function ka use bhi kar sakte hai;
