@@ -19,7 +19,7 @@ int findUnique(int arr[], int sz)
 	int ans = 0;
 	for (int i = 0; i < sz; i++)
 	{
-		ans = ans ^ arr[i];
+		ans = ans ^ arr[i]; //aise bhi likh sakte hai-->   ans^=arr[i]
 	}
 	return ans;
 }
